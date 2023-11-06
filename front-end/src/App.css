@@ -1,0 +1,260 @@
+html{
+  overflow-x: hidden;
+}
+.nav-ul li{
+  display: inline-block;
+  padding: 10px;
+}
+
+h1{
+  margin-left:100px;
+  margin-top:30px;
+  margin-bottom:30px;
+}
+.hehe1{
+  margin: 0px;
+  text-align: center;
+}
+.Help{
+  margin-left: 100px;
+  color:red;
+  margin-top:-5px;
+  display: block;
+}
+.hehe{
+  text-align: center;
+}
+.hehe ul{
+  margin: 0px;
+  text-align: center;
+}
+.search{
+  width:176px;
+  margin-bottom: 10px;
+  background-color: lightyellow;
+  text-align: center;
+  height:20px;
+  margin-left:40px;
+}
+.hehe li{
+  display: inline-block;
+  padding:15px;
+  border: 1px solid skyblue;
+  width:150px;
+  text-align: center;
+  margin-top:0px;
+  height: 30px;
+}
+
+.adding{
+  display: block;
+  width:300px;
+  height:35px;
+  padding:5px;
+  margin-bottom:5px;
+  margin-left:100px;
+}
+.ok123{
+  float:left;
+  border-radius:25px;
+  margin-left:9px;
+  margin-top: 4.5px;
+}
+.button{
+  cursor: pointer;
+  padding:4px;
+  margin-top:10px;
+  width:250px;
+  border-color:purple;
+  background-color: lightblue;
+  margin-left:relative;
+  margin-left:145px;
+}
+.nav-right{
+  text-align: right;
+}
+.register{
+    display: block;
+    margin-bottom: 3px;
+    color: darkblue;
+    border-color: lightblue;
+    width:300px;
+    margin-left:100px;
+    padding:10px;
+}
+.Footer{
+    background-color: skyblue;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    position:fixed;
+    padding:5px;
+}
+.nav-ul li a{
+  color: purple;
+  padding: 5px;
+}
+.nav-ul {
+  background-color: skyblue;
+  padding: 5px;
+  margin: 0px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #e8f5ff;
+    font-family: Arial;
+    overflow: hidden;
+    min-height: 400px;
+    margin-bottom: 50px;
+    clear: both;
+}
+
+.main {
+    margin-top: 2%;
+    margin-left: 29%;
+    font-size: 28px;
+    padding: 0 10px;
+    width: 58%;
+}
+
+.main h2 {
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.main .card {
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 1px 1px 8px 0 grey;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 20px 0 20px 50px;
+}
+
+.main .card table {
+    border: none;
+    font-size: 16px;
+    height: 270px;
+    width: 80%;
+}
+
+.edit {
+    position: absolute;
+    color: #e7e7e8;
+    right: 14%;
+}
+
+.horizontal-list {
+  list-style: none;
+  padding-left: 0px;
+  margin: 50px;
+  background-color: black;
+  border-radius: 45px;
+  width:815px;
+  margin-left: 10px;
+}
+
+.horizontal-list li {
+  display: inline-block;
+  margin: 0px 8px 8px 0px;
+  font-weight: 100;
+  font-size: 0.9rem;
+  margin-right:100px;
+  margin-left:15px;
+  margin-top:10px;
+}
+
+.horizontal-list li a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-icons li a i {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 50%;
+}
+
+.social-icons li a i:hover {
+  box-shadow: 0px 0px 6px 4px rgba(230, 196, 196, 0.3);
+}
+.horizontal-list button{
+  display: inline-block;
+  background-color: white;
+  border-radius: 30px;
+  border:none;
+  font-size: small;
+  font-weight: bold;
+}
+.ProductList{
+  margin-left:40px;
+}
+.Noresult{
+  margin-left:42px;
+}
+#C4{
+  text-transform: capitalize;
+}
+.okok{
+  align-items: center;
+  background-color: black;
+  border: 0;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  font-size: 15px;
+  justify-content: center;
+  line-height: 1em;
+  display: inline;
+  margin-right:10px;
+  width:65px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.okok:active,
+.okok:hover {
+  outline: 0;
+}
