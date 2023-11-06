@@ -18,7 +18,7 @@ const AddProduct = () => {
         else {
             const userId = JSON.parse(localStorage.getItem('user'))._id;
             console.log(userId);
-            let result = await fetch('http://localhost:5000/add-product', {
+            let result = await fetch(process.env.REACT_APP_backend_url+'/add-product', {
                 method: 'post',
                 body: JSON.stringify({ name, price, category, company, userId }),
                 headers: {

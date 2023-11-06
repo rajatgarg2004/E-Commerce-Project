@@ -11,9 +11,9 @@ const UpdateProduct = () => {
     useEffect(()=>{
         console.log(params);
         getProductDetails();
-    },[])
+    })
     const getProductDetails = async()=>{
-        let result = await fetch(`http://localhost:5000/product/${params.id}`,{
+        let result = await fetch(process.env.REACT_APP_backend_url + `/product/${params.id}`,{
             headers:{
                 authorization:`bearer ${JSON.parse(localStorage.getItem('token'))}`
             }
@@ -26,7 +26,7 @@ const UpdateProduct = () => {
     }
     const updateProduct = async () => {
         console.log(name,price,category,company);
-        let result = await fetch(`http://localhost:5000/product/${params.id}`,{
+        let result = await fetch(process.env.REACT_APP_backend_url + `/product/${params.id}`,{
             method:"PUT",
             body: JSON.stringify({name,price,category,company}),
             headers:{

@@ -20,11 +20,11 @@ const SignUp = () => {
         }
         else{
         console.log(name, email, password);
-        let ans = await fetch('http://localhost:5000/producter/'+email);
+        let ans = await fetch(process.env.REACT_APP_backend_url + '/producter/'+email);
         ans= await ans.json();
         if(ans.length<=0)
         {
-            let result = await fetch('http://localhost:5000/register', {
+            let result = await fetch(process.env.REACT_APP_backend_url + '/register', {
             method: 'post',
             body: JSON.stringify({ name, email, password }),
             headers: {
