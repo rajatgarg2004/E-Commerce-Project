@@ -4,12 +4,12 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 mongoose.connect(
     process.env.MONGODB_URL,
-    {useNewUrlParser:true})
-    .then(()=>{
+    { useNewUrlParser: true })
+    .then(() => {
         console.log("Connected to MongoDB");
     })
-    .catch((e)=>{
-        console.log("Couldn't connect to MongoDB",e);
+    .catch((e) => {
+        console.log("Couldn't connect to MongoDB", e);
     })
 const User = require('./db/User');
 const Product = require('./db/Product');
@@ -18,6 +18,9 @@ const Jwt = require('jsonwebtoken');
 const jwtKey = 'e-comm';
 app.use(cors());
 app.use(express.json());
+app.route('/').get((req, res) => {
+    res.send("Server is Running.")
+})
 app.post('/register', async (req, res) => {
     let user = new User(req.body);
     let result = await user.save();
@@ -31,7 +34,7 @@ app.post('/register', async (req, res) => {
     })
 })
 
-app.post('/login',async (req, res) => {
+app.post('/login', async (req, res) => {
 
     if (req.body.email && req.body.password) {
         let user = await User.findOne(req.body).select("-password");
@@ -53,20 +56,20 @@ app.post('/login',async (req, res) => {
     }
 })
 
-app.post('/add-product',verifyToken,async (req, res) => {
+app.post('/add-product', verifyToken, async (req, res) => {
     let product = new Product(req.body);
     let result = await product.save();
     res.send(result);
 })
 
 app.get('/producter/:email', async (req, res) => {
-    let result = await User.find({email:req.params.email});
+    let result = await User.find({ email: req.params.email });
     console.log(result);
     res.send(result);
 })
-app.get('/products/:id',verifyToken, async (req, res) => {
+app.get('/products/:id', verifyToken, async (req, res) => {
     console.log(req.params.id);
-    let result = await Product.find({userId:req.params.id});
+    let result = await Product.find({ userId: req.params.id });
     console.log(result);
     if (result.length > 0) {
         res.send(result);
@@ -77,12 +80,12 @@ app.get('/products/:id',verifyToken, async (req, res) => {
 
 })
 
-app.delete('/product/:id',verifyToken,async (req, res) => {
+app.delete('/product/:id', verifyToken, async (req, res) => {
     let result = await Product.deleteOne({ _id: req.params.id });
     res.send(req.params.id);
 })
 
-app.get('/product/:id',verifyToken,async (req, res) => {
+app.get('/product/:id', verifyToken, async (req, res) => {
     let result = await Product.findOne({ _id: req.params.id });
     if (result) { res.send(result); }
     else {
@@ -90,7 +93,7 @@ app.get('/product/:id',verifyToken,async (req, res) => {
     }
 })
 
-app.put('/product/:id',  async (req, res) => {
+app.put('/product/:id', async (req, res) => {
     let result = await Product.updateOne({ _id: req.params.id }, {
         $set: req.body
     })
