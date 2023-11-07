@@ -20,7 +20,7 @@ const ProductList = () => {
     }
     useEffect(() => {
         getProducts();
-    })
+    },[])
     const deleteProduct = async (id) => {
         let result = await fetch(process.env.REACT_APP_backend_url + "/product/" + id, {
             method: "Delete",
