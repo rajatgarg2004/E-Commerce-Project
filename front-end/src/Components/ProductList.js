@@ -20,7 +20,7 @@ const ProductList = () => {
     }
     useEffect(() => {
         getProducts();
-    },[])
+    })
     const deleteProduct = async (id) => {
         let result = await fetch(process.env.REACT_APP_backend_url + "/product/" + id, {
             method: "Delete",
@@ -54,7 +54,7 @@ const ProductList = () => {
             setProducts(list);
         }
     }
-    (
+    return (
             <div className="hehe">
                 <h1 className="ProductList">Product List</h1>
                 <input type="text" className="search" placeholder='Product Name' onChange={collect}></input>
