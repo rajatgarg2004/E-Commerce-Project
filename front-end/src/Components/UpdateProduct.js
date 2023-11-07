@@ -9,9 +9,8 @@ const UpdateProduct = () => {
     const params = useParams();
     const navigate = useNavigate();
     useEffect(()=>{
-        console.log(params);
         getProductDetails();
-    })
+    },[])
     const getProductDetails = async()=>{
         let result = await fetch(process.env.REACT_APP_backend_url + `/product/${params.id}`,{
             headers:{
