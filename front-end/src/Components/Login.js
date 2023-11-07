@@ -9,7 +9,6 @@ const Login = () => {
         }
     })
     const handleLogin = async () => {
-        console.log(email, password);
         email = email.toLowerCase();
         let result = await fetch(process.env.REACT_APP_backend_url + "/login", {
             method: "POST",
@@ -19,7 +18,6 @@ const Login = () => {
             }
         });
         result = await result.json();
-        console.log(result);
         if (result.auth) {
             localStorage.setItem("user", JSON.stringify(result.user));
             localStorage.setItem("token", JSON.stringify(result.auth));
